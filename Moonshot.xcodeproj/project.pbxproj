@@ -15,6 +15,8 @@
 		2092A3E329760E0900A2838E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092A3E229760E0900A2838E /* ContentView.swift */; };
 		2092A3E529760E0E00A2838E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2092A3E429760E0E00A2838E /* Assets.xcassets */; };
 		2092A3E829760E0E00A2838E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2092A3E729760E0E00A2838E /* Preview Assets.xcassets */; };
+		20A211FE29775D3700029EF3 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A211FD29775D3700029EF3 /* Mission.swift */; };
+		20A2120029775F8C00029EF3 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A211FF29775F8C00029EF3 /* Astronaut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		2092A3E229760E0900A2838E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2092A3E429760E0E00A2838E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2092A3E729760E0E00A2838E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		20A211FD29775D3700029EF3 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		20A211FF29775F8C00029EF3 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,10 @@
 		2092A3DF29760E0900A2838E /* Moonshot */ = {
 			isa = PBXGroup;
 			children = (
+				20A211FF29775F8C00029EF3 /* Astronaut.swift */,
 				2092A3E029760E0900A2838E /* MoonshotApp.swift */,
 				2092A3E229760E0900A2838E /* ContentView.swift */,
+				20A211FD29775D3700029EF3 /* Mission.swift */,
 				2047E82929762C87007CF453 /* Bundle-Decodable.swift */,
 				2092A3E429760E0E00A2838E /* Assets.xcassets */,
 				2047E82429762B44007CF453 /* astronauts.json */,
@@ -154,6 +160,8 @@
 			files = (
 				2092A3E329760E0900A2838E /* ContentView.swift in Sources */,
 				2092A3E129760E0900A2838E /* MoonshotApp.swift in Sources */,
+				20A2120029775F8C00029EF3 /* Astronaut.swift in Sources */,
+				20A211FE29775D3700029EF3 /* Mission.swift in Sources */,
 				2047E82A29762C87007CF453 /* Bundle-Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

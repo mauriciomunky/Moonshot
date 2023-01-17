@@ -7,18 +7,14 @@
 
 import SwiftUI
 
-struct Astronaut: Codable, Identifiable {
-    let id: String
-    let name: String
-    let description: String
-}
-
-
-
 struct ContentView: View {
-    let astronauts = Bundle.main.decode("astronauts.json")
+    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    let missions: [Mission] = Bundle.main.decode("missions.json")
     var body: some View {
-        Text("\(astronauts.count)")
+        ScrollView{
+            Text("Astronauts: \(astronauts.count)")
+            Text("Missions: \(missions.count)")
+        }
     }
 }
 
