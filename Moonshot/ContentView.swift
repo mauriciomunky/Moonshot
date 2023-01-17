@@ -7,15 +7,18 @@
 
 import SwiftUI
 
+struct Astronaut: Codable, Identifiable {
+    let id: String
+    let name: String
+    let description: String
+}
+
+
+
 struct ContentView: View {
+    let astronauts = Bundle.main.decode("astronauts.json")
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text("\(astronauts.count)")
     }
 }
 
