@@ -13,6 +13,8 @@ struct CrewMember {
 }
 
 struct MissionView: View {
+    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    let missions: [Mission] = Bundle.main.decode("missions.json")
     let crew: [CrewMember]
     let mission: Mission
     init(mission: Mission, astronauts: [String: Astronaut]) {
@@ -31,34 +33,18 @@ struct MissionView: View {
                 VStack {
                     Image(mission.image).resizable().scaledToFit().frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
+                    Text(mission.formattedLaunchDate != "NA" ? mission.formattedLaunchDate : "").padding(.bottom)
                     VStack(alignment: .leading) {
                         Text("Mission Highlights").font(.title.bold()).padding(.bottom, 5)
-                        Rectangle().frame(height:2).foregroundColor(.lightBackground).padding(.vertical)
+                        Divider()
                         Text(mission.description)
-                        Rectangle().frame(height:2).foregroundColor(.lightBackground).padding(.vertical)
+                        Divider()
                         Text("Crew")
                             .font(.title.bold())
                             .padding(.bottom, 5)
                     }
                     .padding(.horizontal)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(crew, id: \.role) { crewMember in
-                                NavigationLink {
-                                    Text("Astronaut details")
-                                } label: {
-                                    HStack {
-                                        Image(crewMember.astronaut.id).resizable().frame(width:104,height:72).clipShape(Capsule()).overlay(Capsule().strokeBorder((crewMember.role == "Command Pilot" || crewMember.role == "Commander") ? .blue : .white, lineWidth: 1))
-                                        VStack(alignment: .leading) {
-                                            Text(crewMember.astronaut.name).foregroundColor(.white).font(.headline)
-                                            (crewMember.role == "Command Pilot" || crewMember.role == "Commander") ? Text(crewMember.role).foregroundColor(.white).font(.headline.bold()) :
-                                            Text(crewMember.role).foregroundColor(.secondary)
-                                        }
-                                    }
-                                }.padding(.horizontal)
-                            }
-                        }
-                    }
+                    HorizontalScrollView(mission: mission, astronauts: astronauts)
                 }
                 .padding(.bottom)
                 
