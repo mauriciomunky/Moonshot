@@ -15,7 +15,7 @@ struct AstronautView: View {
             VStack {
                 Image(astronaut.id).resizable().scaledToFit()
                 Text(astronaut.description).padding()
-            }
+            }.accessibilityLabel(astronaut.name.replacingOccurrences(of: ".", with: " "))
         }.background(.darkBackground)
             .navigationTitle(astronaut.name)
             .navigationBarTitleDisplayMode(.inline)

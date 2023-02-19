@@ -32,7 +32,7 @@ struct MissionView: View {
             ScrollView {
                 VStack {
                     Image(mission.image).resizable().scaledToFit().frame(maxWidth: geometry.size.width * 0.6)
-                        .padding(.top)
+                        .padding(.top).accessibilityLabel(mission.image)
                     Text(mission.formattedLaunchDate != "NA" ? mission.formattedLaunchDate : "").padding(.bottom)
                     VStack(alignment: .leading) {
                         Text("Mission Highlights").font(.title.bold()).padding(.bottom, 5)
